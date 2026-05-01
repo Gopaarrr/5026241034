@@ -50,7 +50,7 @@ Route::get('linktreee.html', function () {
 });
 
 Route::get('make', function () {
-	return view('makeoverig');
+	return view('tugas_ets');
 });
 
 Route::get('akses', function () {
