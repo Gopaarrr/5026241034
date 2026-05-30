@@ -5,6 +5,7 @@ use App\Http\Controllers\DosenController;
 use App\Http\Controllers\PegawaiController ;
 use App\Http\Controllers\BlogController ;
 use App\Http\Controllers\PegawaiDBController ;
+use App\Http\Controllers\SepatuDBController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -79,3 +80,19 @@ Route::get('/pegawai/edit/{id}', [PegawaiDBController::class, 'edit']);
 Route::post('/pegawai/update', [PegawaiDBController::class, 'update']);
 Route::get('/pegawai/hapus/{id}', [PegawaiDBController::class, 'hapus']);
 Route::get('/pegawai/cari', [PegawaiDBController::class, 'cari']);
+
+//Tugas Pra EAS
+// Halaman utama tabel sepatu & pencarian
+Route::get('/sepatu', [SepatuDBController::class, 'index']);
+Route::get('/sepatu/cari', [SepatuDBController::class, 'cari']);
+
+// Fitur Tambah Data
+Route::get('/sepatu/tambah', [SepatuDBController::class, 'tambah']);
+Route::post('/sepatu/store', [SepatuDBController::class, 'store']);
+
+// Fitur Edit/Update Data
+Route::get('/sepatu/edit/{id}', [SepatuDBController::class, 'edit']);
+Route::post('/sepatu/update', [SepatuDBController::class, 'update']);
+
+// Fitur Hapus Data
+Route::get('/sepatu/hapus/{id}', [SepatuDBController::class, 'hapus']);
