@@ -25,7 +25,7 @@
         <a class="nav-link" href="/sepatu">Tugas Pra EAS Sepatu</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">PR 2</a>
+        <a class="nav-link" href="/siswa">Siswa</a>
       </li>
             <li class="nav-item">
         <a class="nav-link" href="#">PR 2</a>
