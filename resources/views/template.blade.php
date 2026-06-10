@@ -28,10 +28,10 @@
         <a class="nav-link" href="/siswa">Siswa</a>
       </li>
             <li class="nav-item">
-        <a class="nav-link" href="#">PR 2</a>
+        <a class="nav-link" href="/kbc">Tugas Latihan EAS 1</a>
       </li>
             <li class="nav-item">
-        <a class="nav-link" href="#">PR 3</a>
+        <a class="nav-link" href="/nk">Tugas Latihan EAS 2</a>
       </li>
             <li class="nav-item">
         <a class="nav-link" href="#">EAS</a>

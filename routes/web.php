@@ -7,6 +7,8 @@ use App\Http\Controllers\BlogController ;
 use App\Http\Controllers\PegawaiDBController ;
 use App\Http\Controllers\SepatuDBController;
 use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\KeranjangBelanjaController;
+use App\Http\Controllers\NilaikuliahController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -106,3 +108,19 @@ Route::get('/siswa/{nrp}/edit', [SiswaController::class, 'edit'])->name('siswa.e
 Route::put('/siswa/{nrp}', [SiswaController::class, 'update'])->name('siswa.update');
 Route::delete('/siswa/{nrp}', [SiswaController::class, 'destroy'])->name('siswa.destroy');
 
+// Menampilkan tabel keranjang (Halaman Utama)
+Route::get('/kbc', [KeranjangBelanjaController::class, 'index'])->name('kbc.index');
+
+// Menampilkan halaman form beli/tambah
+Route::get('/kbc/tambah', [KeranjangBelanjaController::class, 'beli'])->name('kbc.tambah');
+
+// Memproses data dari form beli (Wajib gunakan Route::post karena form di beli.blade.php method="post")
+Route::post('/kbc/beli', [KeranjangBelanjaController::class, 'tambah'])->name('kbc.beli');
+
+// Memproses hapus data (Tombol Batal dengan menangkap parameter ID)
+Route::get('/kbc/batal/{id}', [KeranjangBelanjaController::class, 'batal'])->name('kbc.batal');
+
+//nilaikuliah
+Route::get('/nk', [NilaikuliahController::class, 'index'])->name('kbc.index');
+Route::get('/nk/tambah', [NilaikuliahController::class, 'tambah'])->name('kbc.tambah');
+Route::post('/nk/store', [NilaikuliahController::class, 'store'])->name('kbc.store');
