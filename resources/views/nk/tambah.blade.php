@@ -2,7 +2,7 @@
 @section('title', 'Tambah Nilai Kuliah')
 @section('konten')
 
-    <a href="/nilaikuliah" class="btn btn-secondary mb-4">Kembali</a>
+    <a href="/nk" class="btn btn-secondary mb-4">Kembali</a>
 
     <div class="card">
         <div class="card-header">

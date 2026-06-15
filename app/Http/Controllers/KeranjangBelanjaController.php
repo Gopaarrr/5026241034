@@ -32,7 +32,7 @@ class KeranjangBelanjaController extends Controller
         return redirect('/kbc');
     }
 
-	// method untuk hapus data pegawai
+	// method untuk hapus data 
 	public function batal($id)
 	{
 		// menghapus data pegawai berdasarkan id yang dipilih

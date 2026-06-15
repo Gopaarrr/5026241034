@@ -11,7 +11,7 @@
             </div>
 
             <div class="card-body">
-                <form action="/sepatu/update" method="post">
+                <form action="/lat/update" method="post">
                     {{ csrf_field() }}
 
                     <input type="hidden" name="kodesepatu" value="{{ $s->kodesepatu }}">

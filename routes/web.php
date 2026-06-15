@@ -9,6 +9,8 @@ use App\Http\Controllers\SepatuDBController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\KeranjangBelanjaController;
 use App\Http\Controllers\NilaikuliahController;
+use App\Http\Controllers\latihaneasController;
+use App\Http\Controllers\EASController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -108,19 +110,29 @@ Route::get('/siswa/{nrp}/edit', [SiswaController::class, 'edit'])->name('siswa.e
 Route::put('/siswa/{nrp}', [SiswaController::class, 'update'])->name('siswa.update');
 Route::delete('/siswa/{nrp}', [SiswaController::class, 'destroy'])->name('siswa.destroy');
 
-// Menampilkan tabel keranjang (Halaman Utama)
+// Menampilkan tabel keranjang
 Route::get('/kbc', [KeranjangBelanjaController::class, 'index'])->name('kbc.index');
 
 // Menampilkan halaman form beli/tambah
 Route::get('/kbc/tambah', [KeranjangBelanjaController::class, 'beli'])->name('kbc.tambah');
 
-// Memproses data dari form beli (Wajib gunakan Route::post karena form di beli.blade.php method="post")
+// Memproses data dari form beli
 Route::post('/kbc/beli', [KeranjangBelanjaController::class, 'tambah'])->name('kbc.beli');
 
-// Memproses hapus data (Tombol Batal dengan menangkap parameter ID)
+// Memproses hapus data
 Route::get('/kbc/batal/{id}', [KeranjangBelanjaController::class, 'batal'])->name('kbc.batal');
 
 //nilaikuliah
 Route::get('/nk', [NilaikuliahController::class, 'index'])->name('kbc.index');
 Route::get('/nk/tambah', [NilaikuliahController::class, 'tambah'])->name('kbc.tambah');
 Route::post('/nk/store', [NilaikuliahController::class, 'store'])->name('kbc.store');
+
+//Latihan EAS
+Route::get('/lat', [latihaneasController::class, 'index'])->name('lat.index');
+Route::get('/lat/update/{id}', [latihaneasController::class, 'update'])->name('lat.update');
+
+//EAS
+Route::get('/eas', [EASController::class, 'index'])->name('eas.index');
+Route::get('/eas/tambah', [EASController::class, 'tambah'])->name('eas.tambah');
+Route::post('/eas/store', [EASController::class, 'store'])->name('eas.store');
+Route::get('/eas/view/{kodepegawai}', [EASController::class, 'view'])->name('eas.view');
